@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding style="background-color:#e1dfdf">
+<ion-content padding style="background-color:#e1dfdf;font-family:Lucida;">
 
   <ion-card>
 
@@ -14,34 +14,51 @@
     <ion-avatar item-start>
       <img src="../assets/imgs/logo.png">
     </ion-avatar>
-    <h2>Marty McFly</h2>
-    <p>November 5, 1955</p>
+    <h2>Marty McFly (author of post)</h2>
+    <p>November 5, 1955 (time of posting here)</p>
   </ion-item>
 
-<img src="../assets/imgs/logo.png">
+<h1 padding><b>Some awesome facts</b></h1>
 
-  <ion-card-content>
-    <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+ <ion-card-content> 
+    <p>• Believe it or not, a coin toss is not completely 50–50; the heads side is heavier, and therefore more likely to land on the bottom</p>
+    <p>• There are over 30 million Facebook accounts of people who are dead</p>
+    <p>• Tiger shark embryos fight each other in their mother's womb; the survivor is born</p>
+    <p>• The state sport of Maryland is jousting</p>
+    <p>• Oxford University is older than the Aztec Empire</p>
+    <p>• The NASA Vehicle Assembly Building is so large that it has its own weather, including rain clouds</p>
+    <p>• The bushes and clouds in Super Mario Bros are the same shape; they are just colored differently</p>
+    <p>• Hippopotomonstrosesquippedaliophobia is the fear of long words</p>
   </ion-card-content>
+  
 
   <ion-row>
     <ion-col center text-center>
       <button ion-button icon-left clear small (click)="upvote()">
-        <ion-icon name="thumbs-up"></ion-icon>
-        <div>{{num}} Likes</div>
+        <ion-icon name="ios-thumbs-up-outline" [hidden]="fillbu"></ion-icon>
+        <ion-icon name="ios-thumbs-up" [hidden]="!fillbu"></ion-icon>
+        <div>{{num}} Clap</div>
+      </button>
+    </ion-col>
+
+        <ion-col center text-center>
+      <button ion-button icon-left clear small (click)="downvote()">
+        <ion-icon name="ios-thumbs-down-outline" [hidden]="fillbd"></ion-icon>
+        <ion-icon name="ios-thumbs-down" [hidden]="!fillbd"></ion-icon>
+        <div>{{num1}} Slap</div>
       </button>
     </ion-col>
     
+  </ion-row>
+
+<ion-row>
     <ion-col center text-center>
     <button ion-button icon-left clear small>
     <ion-icon name="share-alt"></ion-icon>
     <div>Share</div>
     </button>
     </ion-col>
-    
-
-  </ion-row>
-
+</ion-row>
 </ion-card>
 
 
