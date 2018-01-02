@@ -7,33 +7,41 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-num:number = 0;
-num1:number = 0;
-fillbu:boolean=false;
-fillbd:boolean=false;
+initVotes:number = 19;    //Represents total Number of Votes ---- Will be Obtained from database
+stateVote:number = 1;     //Represents whether the user has already liked or disliked the post --- Will be Obtained from database
+
 
   constructor(public navCtrl: NavController) {
 
   }
-upvote()
-{
-if(this.num==0)
-{this.num=1;
-this.fillbu=true;}
-else
-{this.num=0;
-this.fillbu=false;}
-}
 
-downvote()
-{
-if(this.num1==0)
-{this.num1=1;
-this.fillbd=true;
-}
-else
-{this.num1=0;
-this.fillbd=false;}
-}
+  upvote(){
+    if(this.stateVote==1){
+      this.stateVote =0;
+      this.initVotes = this.initVotes -1;
+    }
+    else if(this.stateVote==0){
+      this.stateVote = this.stateVote +1;
+      this.initVotes = this.initVotes +1;
+    }
+    else if(this.stateVote==-1){
+      this.stateVote = this.stateVote +2;
+      this.initVotes = this.initVotes +2;
+    }
+  }
 
+  downvote(){
+    if(this.stateVote==-1){
+      this.stateVote =0;
+      this.initVotes = this.initVotes +1;
+    }
+    else if(this.stateVote==0){
+      this.stateVote = this.stateVote -1;
+      this.initVotes = this.initVotes -1;
+    }
+    else if(this.stateVote==1){
+      this.stateVote = this.stateVote -2;
+      this.initVotes = this.initVotes -2;
+    }
+  }
 }
