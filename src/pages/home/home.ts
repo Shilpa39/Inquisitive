@@ -19,7 +19,9 @@ facts:Array<Object>;
                      })
   }
 
+
   upvote(){
+
     if(this.stateVote==1){
       this.stateVote =0;
       this.initVotes = this.initVotes -1;
@@ -35,6 +37,7 @@ facts:Array<Object>;
   }
 
   downvote(){
+
     if(this.stateVote==-1){
       this.stateVote =0;
       this.initVotes = this.initVotes +1;
