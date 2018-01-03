@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {FactsService} from '../../services/facts.service';
 
 @Component({
   selector: 'page-home',
@@ -9,10 +10,13 @@ export class HomePage {
 
 initVotes:number = 19;    //Represents total Number of Votes ---- Will be Obtained from database
 stateVote:number = 1;     //Represents whether the user has already liked or disliked the post --- Will be Obtained from database
+facts:Array<Object>;
 
-
-  constructor(public navCtrl: NavController) {
-
+  constructor(private factsService: FactsService,public navCtrl: NavController) {
+    this.factsService.getFacts()
+                     .subscribe(res => {
+                       this.facts = res;
+                     })
   }
 
   upvote(){
