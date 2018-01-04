@@ -6,18 +6,12 @@ import { Component, Input } from '@angular/core';
 
     <ion-item>
       <ion-avatar item-start>
-        <img [src]="fact.FactAuthorImage">
+        <img [src]="fact.AuthorImage">
       </ion-avatar>
-      <h2>{{fact.FactAuthor}}</h2>
-      <p>{{fact.FactDate}}</p>
+      <h2>{{fact.Author}}</h2>
+      <p>{{fact.Date}}</p>
     </ion-item>
     
-    <h1 padding><b>{{fact.FactTitle}}</b></h1>
-
-    <ion-card-content> 
-      <p>• {{fact.FactContent}}</p>
-    
-    </ion-card-content>
     
    `
 })

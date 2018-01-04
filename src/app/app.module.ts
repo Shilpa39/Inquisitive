@@ -7,13 +7,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import {PostComponent} from '../pages/components/post.component';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MemePage } from '../pages/meme/meme';
+import { QuotePage } from '../pages/quote/quote';
+
 import {FactsService} from '../services/facts.service';
+import {MemesService} from '../services/memes.service';
+import {QuotesService} from '../services/quotes.service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     PostComponent,
+    MemePage,
+    QuotePage
   ],
   imports: [
     BrowserModule,
@@ -23,13 +30,17 @@ import {FactsService} from '../services/facts.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MemePage,
+    QuotePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     HttpModule,
     FactsService,
+    MemesService,
+    QuotesService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

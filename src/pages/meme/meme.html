@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Home
+      Meme
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,14 +11,12 @@
   <ion-card *ngFor="let fact of facts" >
 
 <post [fact]="fact"></post>
-     
-     <h1 padding><b>{{fact.Title}}</b></h1>
+    
 
     <ion-card-content> 
-      <p>• {{fact.Content}}</p>
+      <img [src]="fact.MemeImage">
     
     </ion-card-content>
-   
 
     <ion-row>
       <ion-col center text-center>
