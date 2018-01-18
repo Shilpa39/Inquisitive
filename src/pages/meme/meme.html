@@ -6,9 +6,10 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content style="background-color:#e1dfdf;font-family:Lucida;">
+<ion-content style="background-color:#660033;font-family:Lucida;">
 
-  <ion-card *ngFor="let fact of facts" >
+  <ion-card *ngFor="let fact of facts" style="background-color:#99004d;
+  z-index:2.5;">
 
 <post [fact]="fact"></post>
     
@@ -20,7 +21,7 @@
 
     <ion-row>
       <ion-col center text-center>
-        <button ion-button icon-left clear small (click)="upvote()">
+        <button ion-button icon-left clear small (click)="upvote()" style="color:white;">
           <ion-icon name="ios-thumbs-up-outline" [hidden]="(stateVote==1)"></ion-icon>
           <ion-icon name="ios-thumbs-up" [hidden]="!(stateVote==1)"></ion-icon>
           <div>Clap</div>
@@ -28,11 +29,11 @@
       </ion-col>
 
       <ion-col center text-center>
-        <button ion-button icon-left clear small>{{initVotes}}</button>
+        <button ion-button icon-left clear small style="color:white;">{{initVotes}}</button>
       </ion-col>
 
       <ion-col center text-center>
-        <button ion-button icon-left clear small (click)="downvote()">
+        <button ion-button icon-left clear small (click)="downvote()" style="color:white;">
           <ion-icon name="ios-thumbs-down-outline" [hidden]="(stateVote==-1)"></ion-icon>
           <ion-icon name="ios-thumbs-down" [hidden]="!(stateVote==-1)"></ion-icon>
           <div>Slap</div>
@@ -42,7 +43,7 @@
 
     <ion-row>
       <ion-col center text-center>
-        <button ion-button icon-left clear small>
+        <button ion-button icon-left clear small style="color:white;">
           <ion-icon name="share-alt"></ion-icon>
           <div>Share</div>
         </button>
