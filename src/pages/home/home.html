@@ -20,29 +20,8 @@
       <p style="color:white;">• {{fact.Content}}</p>
     
     </ion-card-content>
-   
 
-    <ion-row>
-      <ion-col center text-center>
-        <button ion-button icon-left clear small (click)="upvote()" style="color:white;">
-          <ion-icon name="ios-thumbs-up-outline" [hidden]="(stateVote==1)"></ion-icon>
-          <ion-icon name="ios-thumbs-up" [hidden]="!(stateVote==1)"></ion-icon>
-          <div>Clap</div>
-        </button>
-      </ion-col>
-
-      <ion-col center text-center>
-        <button ion-button icon-left clear small style="color:white;">{{initVotes}}</button>
-      </ion-col>
-
-      <ion-col center text-center>
-        <button ion-button icon-left clear small (click)="downvote()" style="color:white;">
-          <ion-icon name="ios-thumbs-down-outline" [hidden]="(stateVote==-1)"></ion-icon>
-          <ion-icon name="ios-thumbs-down" [hidden]="!(stateVote==-1)"></ion-icon>
-          <div>Slap</div>
-        </button>
-      </ion-col> 
-    </ion-row>
+<clapslap [initVotes]="fact.initVotes" [stateVote]="fact.stateVote"></clapslap>
 
     <ion-row>
       <ion-col center text-center>

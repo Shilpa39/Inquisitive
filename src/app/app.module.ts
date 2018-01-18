@@ -4,7 +4,8 @@ import {HttpModule} from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import {PostComponent} from '../pages/components/post.component';
+import {PostComponent} from '../components/post.component';
+import {ClapSlapComponent} from '../components/clapslap.component';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MemePage } from '../pages/meme/meme';
@@ -19,6 +20,7 @@ import {QuotesService} from '../services/quotes.service';
     MyApp,
     HomePage,
     PostComponent,
+    ClapSlapComponent,
     MemePage,
     QuotePage
   ],
